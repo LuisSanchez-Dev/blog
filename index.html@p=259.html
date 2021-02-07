@@ -1,0 +1,940 @@
+
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="format-detection" content="telephone=no">
+<script>window.koko_analytics = {"tracker_url":"https:\/\/luissanchezdev.com\/koko-analytics-collect.php","post_id":259,"use_cookie":1,"cookie_path":"\/","honor_dnt":true};</script>
+
+<title>Add an user interface to your Streamlabs Chatbot script using UI_Config.json - Luis Sanchez | Blog</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="index.html@p=259.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Add an user interface to your Streamlabs Chatbot script using UI_Config.json - Luis Sanchez | Blog" />
+<meta property="og:description" content="Make your scripts look professional and easy to use with an user interface capable of customizing your script to meet your users requirements." />
+<meta property="og:url" content="https://luissanchezdev.com/add-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json/" />
+<meta property="og:site_name" content="Luis Sanchez | Blog" />
+<meta property="article:published_time" content="2020-10-08T06:11:21+00:00" />
+<meta property="article:modified_time" content="2020-10-10T21:54:15+00:00" />
+<meta property="og:image" content="https://luissanchezdev.com/img/posts/streamlabs-chatbot/add-ui-to-script/script-user-interface.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@LuisSanchez_Dev" />
+<meta name="twitter:site" content="@LuisSanchez_Dev" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://luissanchezdev.com/#website","url":"https://luissanchezdev.com/","name":"Luis Sanchez | Blog","description":"A blog to share knowledge","publisher":{"@id":"https://luissanchezdev.com/#/schema/person/1891292502cd7fed02dab9c96da6c1a0"},"potentialAction":[{"@type":"SearchAction","target":"https://luissanchezdev.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://luissanchezdev.com/add-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json/#primaryimage","inLanguage":"en-US","url":"/img/posts/streamlabs-chatbot/add-ui-to-script/script-user-interface.png"},{"@type":"WebPage","@id":"https://luissanchezdev.com/add-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json/#webpage","url":"https://luissanchezdev.com/add-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json/","name":"Add an user interface to your Streamlabs Chatbot script using UI_Config.json - Luis Sanchez | Blog","isPartOf":{"@id":"https://luissanchezdev.com/#website"},"primaryImageOfPage":{"@id":"https://luissanchezdev.com/add-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json/#primaryimage"},"datePublished":"2020-10-08T06:11:21+00:00","dateModified":"2020-10-10T21:54:15+00:00","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://luissanchezdev.com/add-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json/"]}]},{"@type":"Article","@id":"https://luissanchezdev.com/add-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json/#article","isPartOf":{"@id":"https://luissanchezdev.com/add-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json/#webpage"},"author":{"@id":"https://luissanchezdev.com/#/schema/person/1891292502cd7fed02dab9c96da6c1a0"},"headline":"Add an user interface to your Streamlabs Chatbot script using UI_Config.json","datePublished":"2020-10-08T06:11:21+00:00","dateModified":"2020-10-10T21:54:15+00:00","mainEntityOfPage":{"@id":"https://luissanchezdev.com/add-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json/#webpage"},"commentCount":0,"publisher":{"@id":"https://luissanchezdev.com/#/schema/person/1891292502cd7fed02dab9c96da6c1a0"},"image":{"@id":"https://luissanchezdev.com/add-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json/#primaryimage"},"keywords":"scripts,tutorial,user interface","articleSection":"Streamlabs Chatbot","inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://luissanchezdev.com/add-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json/#respond"]}]},{"@type":["Person","Organization"],"@id":"https://luissanchezdev.com/#/schema/person/1891292502cd7fed02dab9c96da6c1a0","name":"Luis Sanchez","image":{"@type":"ImageObject","@id":"https://luissanchezdev.com/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/1a3d42b86011bca75639fbf178e411d8?s=96&d=mm&r=g","caption":"Luis Sanchez"},"logo":{"@id":"https://luissanchezdev.com/#personlogo"},"description":"I'm a software developer focused on tasks automation and backend development. I am based in Tamaulipas, Mexico. I have been working as a freelance developer since 2018 doing web scraping and scripting.","sameAs":["https://twitter.com/LuisSanchez_Dev","https://youtube.com/luissanchezdev"]}]}</script>
+
+<link rel='dns-prefetch' href='https://s7.addthis.com/' />
+<link rel='dns-prefetch' href='https://use.fontawesome.com/' />
+<link rel='dns-prefetch' href='https://cdnjs.cloudflare.com/' />
+<link rel='dns-prefetch' href='https://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Luis Sanchez | Blog &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Luis Sanchez | Blog &raquo; Comments Feed" href="comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Luis Sanchez | Blog &raquo; Add an user interface to your Streamlabs Chatbot script using UI_Config.json Comments Feed" href="add-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json/feed/index.html" />
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/luissanchezdev.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='ot-google-fonts-css' href='https://fonts.googleapis.com/css?family=Fira+Sans:500%7CRaleway:300,regular,500,700%7CVarela+Round:regular%7CBarlow+Condensed:300,regular,500,700%7CRaleway:500,700' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css' href='wp-includes/css/dist/block-library/style.min.css@ver=5.5.1.css' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<style id='md-style-inline-css' type='text/css'>
+ code.kb-btn { display: inline-block; color: #666; font: bold 9pt arial; text-decoration: none; text-align: center; padding: 2px 5px; margin: 0 5px; background: #eff0f2; -moz-border-radius: 4px; border-radius: 4px; border-top: 1px solid #f5f5f5; -webkit-box-shadow: inset 0 0 20px #e8e8e8, 0 1px 0 #c3c3c3, 0 1px 0 #c9c9c9, 0 1px 2px #333; -moz-box-shadow: inset 0 0 20px #e8e8e8, 0 1px 0 #c3c3c3, 0 1px 0 #c9c9c9, 0 1px 2px #333; box-shadow: inset 0 0 20px #e8e8e8, 0 1px 0 #c3c3c3, 0 1px 0 #c9c9c9, 0 1px 2px #333; text-shadow: 0px 1px 0px #f5f5f5; } .copy-button { cursor: pointer; border: 0; font-size: 12px; text-transform: uppercase; font-weight: 500; padding: 3px 6px 3px 6px; background-color: rgba(255, 255, 255, 0.6); position: absolute; overflow: hidden; top: 5px; right: 5px; border-radius: 3px; } .copy-button:before { content: ""; display: inline-block; width: 16px; height: 16px; margin-right: 3px; background-size: contain; background-image: url("data:image/svg+xml,%3Csvg version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' x=\'0px\' y=\'0px\' width=\'16px\' height=\'16px\' viewBox=\'888 888 16 16\' enable-background=\'new 888 888 16 16\' xml:space=\'preserve\'%3E %3Cpath fill=\'%23333333\' d=\'M903.143,891.429c0.238,0,0.44,0.083,0.607,0.25c0.167,0.167,0.25,0.369,0.25,0.607v10.857 c0,0.238-0.083,0.44-0.25,0.607s-0.369,0.25-0.607,0.25h-8.571c-0.238,0-0.44-0.083-0.607-0.25s-0.25-0.369-0.25-0.607v-2.571 h-4.857c-0.238,0-0.44-0.083-0.607-0.25s-0.25-0.369-0.25-0.607v-6c0-0.238,0.06-0.5,0.179-0.786s0.262-0.512,0.428-0.679 l3.643-3.643c0.167-0.167,0.393-0.309,0.679-0.428s0.547-0.179,0.786-0.179h3.714c0.238,0,0.44,0.083,0.607,0.25 c0.166,0.167,0.25,0.369,0.25,0.607v2.929c0.404-0.238,0.785-0.357,1.143-0.357H903.143z M898.286,893.331l-2.67,2.669h2.67V893.331 z M892.571,889.902l-2.669,2.669h2.669V889.902z M894.321,895.679l2.821-2.822v-3.714h-3.428v3.714c0,0.238-0.083,0.441-0.25,0.607 s-0.369,0.25-0.607,0.25h-3.714v5.714h4.571v-2.286c0-0.238,0.06-0.5,0.179-0.786C894.012,896.071,894.155,895.845,894.321,895.679z M902.857,902.857v-10.286h-3.429v3.714c0,0.238-0.083,0.441-0.25,0.607c-0.167,0.167-0.369,0.25-0.607,0.25h-3.714v5.715H902.857z\' /%3E %3C/svg%3E"); background-repeat: no-repeat; position: relative; top: 3px; } pre { position: relative; } pre:hover .copy-button { background-color: rgba(255, 255, 255, 0.9); } 
+</style>
+<link rel='stylesheet' id='baltazar-style-css' href='wp-content/themes/baltazar-lite/style.css@ver=5.5.1.css' type='text/css' media='all' />
+<style id='baltazar-style-inline-css' type='text/css'>
+
+
+.block_footer_text, .quote-category .blogpostcategory, .quote-widget p, .quote-widget {font-family: , "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;}
+body {	 
+	background:#f2f2f2  !important;
+	color:#444444;
+	font-family: Raleway, "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+}
+.minimal-light .esg-filterbutton, .minimal-light .esg-navigationbutton, .minimal-light .esg-sortbutton, .minimal-light .esg-cartbutton a, .wprm-recipe-instruction .wprm-recipe-instruction-text, h3#reply-title small a, .grid .blog-category a, .widget_wysija input
+.grid input[type="submit"], .widget_wysija input {font-family: Raleway, "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;}
+
+
+::selection { background: #000; color:#fff; text-shadow: none; }
+
+h1, h2, h3, h4, h5, h6, .block1 p, .top-wrapper .widget_search form input#s, .authorBlogName, .baltazar-breadcrumb span,
+#mega-menu-wrap-baltazar_mainmenu #mega-menu-baltazar_mainmenu > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item h4.mega-block-title, 
+#mega-menu-wrap-baltazar_mainmenu .wttitle h4, #mega-menu-wrap-baltazar_mainmenu .wttitle h4 a, .baltazar-read-more a, .sidebar .widgett .widget-date, .related .post-meta-time
+{
+	font-family: Barlow Condensed, "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
+	font-weight: normal;
+	}
+.blog-category a, .post-meta a, input.wysija-submit, .wp-pagenavi a, .wp-pagenavi span, input[type="submit"], .prev-post-title, .next-post-title, .blog_time_read, .blog_author  {font-family: Barlow Condensed, "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;}
+h1, h1 a { 	
+	color:#333333;
+	font-size: 48px ;
+	}
+	
+h2, h2 a, .term-description p { 	
+	color:#333333;
+	font-size: 46px  ;
+	}
+
+h3, h3 a { 	
+	color:#333333;
+	font-size: 38px  ;
+	}
+
+h4, h4 a { 	
+	color:#333333;
+	font-size: 32px  ;
+	}	
+	
+h5, h5 a { 	
+	color:#333333;
+	font-size: 30px  ;
+	}	
+
+h6, h6 a { 	
+	color:#333333;
+	font-size: 26px  ;
+	}	
+
+.pagenav a, #mega-menu-wrap-baltazar_mainmenu #mega-menu-baltazar_mainmenu > li.mega-menu-item > a.mega-menu-link,
+#mega-menu-wrap-baltazar_mainmenu #mega-menu-baltazar_mainmenu > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, 
+#mega-menu-wrap-baltazar_mainmenu #mega-menu-baltazar_mainmenu > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, 
+#mega-menu-wrap-baltazar_mainmenu #mega-menu-baltazar_mainmenu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link,
+#mega-menu-wrap-baltazar_mainmenu #mega-menu-baltazar_mainmenu > li.mega-menu-item.mega-toggle-on > a.mega-menu-link, 
+#mega-menu-wrap-baltazar_mainmenu #mega-menu-baltazar_mainmenu > li.mega-menu-item > a.mega-menu-link:hover, 
+#mega-menu-wrap-baltazar_mainmenu #mega-menu-baltazar_mainmenu > li.mega-menu-item > a.mega-menu-link:focus,
+.respMenu a
+
+ {font-family: Barlow Condensed;
+			  font-size: 18px;
+			  font-weight:normal;
+			  color:#ffffff;
+}
+.pagenav a {font-family: Barlow Condensed !important;}
+
+.pagenav li.has-sub-menu > a:after, .menu > li.has-sub-menu li.menu-item-has-children > a:before  {color:#ffffff;}
+.widget_wysija_cont .updated, .widget_wysija_cont .login .message, p.edd-logged-in, #edd_login_form, #edd_login_form p, .esg-grid  {font-family: Raleway, "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif !important;color:#444444;font-size:14px;}
+.block1_lower_text p {font-family: Raleway, "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif !important;font-size:14px;}
+
+a, select, input, textarea, button{ color:#343434;}
+
+
+a.blog-name {
+	color:#000000;
+	font-family: Fira Sans, "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif !important;
+	font-size: 50px;
+	font-weight:;
+}
+
+/* ***********************
+--------------------------------------
+------------MAIN COLOR----------
+--------------------------------------
+*********************** */
+
+a:hover,  .current-menu-item a, .blogmore, .pagenav.fixedmenu li a:hover, .widget ul li a:hover,.pagenav.fixedmenu li.current-menu-item > a,.block2_text a,
+.blogcontent a, .sentry a, .post-meta a:hover, .sidebar .social_icons i:hover,.blog_social .addthis_toolbox a:hover, .addthis_toolbox a:hover, .content.blog .single-date,
+ .pmc-main-menu li.colored a, #footer .widget ul li a:hover, .sidebar .widget ul li a:hover, #footer a:hover, li.current-menu-item a,  #footer .social_icons a:hover i, 
+ #footerb a,  .wprm-recipe-ingredient.baltazar-recipe-selected span, .menu-fixedmenu span, 
+ #mega-menu-wrap-baltazar_mainmenu #mega-menu-baltazar_mainmenu > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, 
+ #mega-menu-wrap-baltazar_mainmenu #mega-menu-baltazar_mainmenu > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, 
+ #mega-menu-wrap-baltazar_mainmenu #mega-menu-baltazar_mainmenu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link,
+ #mega-menu-wrap-baltazar_mainmenu #mega-menu-baltazar_mainmenu > li.mega-menu-item > a.mega-menu-link:hover, 
+#mega-menu-wrap-baltazar_mainmenu #mega-menu-baltazar_mainmenu > li.mega-menu-item > a.mega-menu-link:focus,
+#mega-menu-wrap-baltazar_mainmenu .wttitle h4 a:hover, .menu ul.sub-menu li a:hover, .menu ul.children li a:hover
+
+
+{
+	color:#ad6c60;
+}
+
+.wprm-rating-star-full svg polygon {fill:#ad6c60!important;}
+svg polygon {stroke:#ad6c60 !important;}
+
+
+.addthis_toolbox a i:hover, .mega-current_page_item a {color:#ad6c60 !important;}
+.resp_menu_button {color:#333333 ;}
+ 
+/* ***********************
+--------------------------------------
+------------BACKGROUND MAIN COLOR----------
+--------------------------------------
+*********************** */
+
+.top-cart, .widget_tag_cloud a:hover, .sidebar .widget_search #searchsubmit,
+.specificComment .comment-reply-link:hover, #submit:hover,  .wpcf7-submit:hover, #submit:hover,
+.link-title-previous:hover, .link-title-next:hover, .specificComment .comment-edit-link:hover, .specificComment .comment-reply-link:hover, h3#reply-title small a:hover, .pagenav li a:after,
+.widget_wysija_cont .wysija-submit,.widget ul li:before, #footer .widget_search #searchsubmit,  .blogpost .tags a:hover,
+.mainwrap.single-default.sidebar .link-title-next:hover, .mainwrap.single-default.sidebar .link-title-previous:hover, .baltazar-home-deals-more a:hover, .top-search-form i:hover, .edd-submit.button.blue:hover,
+ul#menu-top-menu, a.catlink:hover, .mainwrap.single-default .link-title-next:hover, .mainwrap.single-default .link-title-previous:hover, #footer input.wysija-submit, #commentform #submit:hover, input[type="submit"]:hover, #submit:hover,
+.sidebar-buy-button a:hover, .sidebar .widget h3:before, .wprm-recipe-print:hover, .block1_all_text:hover .block1_lower_text p:before, 
+#pmc-tabs ul li a:hover, #pmc-tabs ul li.ui-state-active a 
+  {
+	background:#ad6c60 ;
+}
+
+.minimal-light .esg-navigationbutton:hover, .minimal-light .esg-filterbutton:hover, .minimal-light .esg-sortbutton:hover, .minimal-light .esg-sortbutton-order:hover, .minimal-light .esg-cartbutton a:hover, .minimal-light .esg-filterbutton.selected{
+	background:#ad6c60 !important;
+	
+}
+
+.eg-portfolio-dark-container {background:#086d90 !important;}
+
+
+.pagenav  li li a:hover {background:none;}
+.edd-submit.button.blue:hover, .cart_item.edd_checkout a:hover {background:#ad6c60 !important;}
+.link-title-previous:hover, .link-title-next:hover {color:#fff;}
+#headerwrap {background:#fafafa;}
+.pagenav {background:#292929;}
+
+.blogpostcategory, .content .blogpost, .postcontent.singledefult .share-post, .commentlist, .postcontent.singlepage, .block2_img, .block2_text, .sidebar .widget,
+.relatedPosts, #commentform, .sidebars-wrap .widget
+ {background:#ffffff ;}
+ 
+ 
+.block1_text, .block1_all_text, .block1_lower_text {background:#fff ;}
+.blog_social, .socialsingle, .blog_social i {color:#333333;}
+.widget_tag_cloud a, .blogpost .tags a {color:#333333;border-color:#eeeeee ;}
+#commentform textarea, .singlepage textarea, .singlepage input {background:#eeeeee ;}
+input[type="submit"] {background:#222;}
+
+#baltazar-slider-wrapper, .baltazar-rev-slider {padding-top:-20px;}
+
+.block1_lower_text p:before {background:#eeeeee ;}
+.recent_posts .widgett, .category_posts .widgett, .widget.widget_categories ul li, .widget.widget_archive ul li, .relatedPosts, .specificComment, ol.commentlist
+{border-color:#eeeeee ;}
+
+
+
+/* BUTTONS */
+
+
+ .top-wrapper .social_icons a i:hover {color:#ad6c60 !important;}
+
+ /* ***********************
+--------------------------------------
+------------BOXED---------------------
+-----------------------------------*/
+  
+   		.sidebars-wrap{padding:0;}
+		.sidebar-left-right{padding:0;}
+ 
+.top-wrapper {background:#292929; color:#ffffff}
+.top-wrapper i, .top-wrapper a, .top-wrapper div, .top-wrapper form input, .top-wrapper form i{color:#ffffff !important}
+
+.pagenav {background:#292929;border-top:0px solid #000;border-bottom:0px solid #000;}
+
+/*hide header*/
+
+/*footer style option*/
+#footer, .block3, #footerbwrap {background: #ffffff}
+#footer p, #footer div, #footer a, #footer input, #footer, #footer h1, #footer h2, #footer h3 , #footer h4 , #footer i, .copyright{color:#333333} 
+
+
+/* ***********************
+--------------------------------------
+------------CUSTOM CSS----------
+--------------------------------------
+*********************** */
+
+</style>
+<link rel='stylesheet' id='prism-css-0-css' href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-twilight.min.css?ver=1.15.0' type='text/css' media='all' />
+<link rel='stylesheet' id='prism-css-1-css' href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.css?ver=1.15.0' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css' href='wp-content/plugins/jetpack/css/jetpack.css@ver=8.9.1.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-includes/js/jquery/jquery.js@ver=1.12.4-wp' id='jquery-core-js'></script>
+<script type='text/javascript' src='wp-content/themes/baltazar-lite/js/jquery.fitvids.js@ver=1' id='jquery-fitvids-js'></script>
+<script type='text/javascript' src='wp-content/themes/baltazar-lite/js/jquery.scrollTo.js@ver=1' id='jquery-scrollTo-js'></script>
+<script type='text/javascript' src='wp-content/themes/baltazar-lite/js/custom.js@ver=1' id='baltazar-custom-js'></script>
+<script type='text/javascript' id='baltazar-custom-js-after'>
+	
+		"use strict"; 
+		jQuery(document).ready(function($){	
+			jQuery(".searchform #s").attr("value","Search and hit enter...");	
+			jQuery(".searchform #s").focus(function() {
+				jQuery(".searchform #s").val("");
+			});
+			
+			jQuery(".searchform #s").focusout(function() {
+				if(jQuery(".searchform #s").attr("value") == "")
+					jQuery(".searchform #s").attr("value","Search and hit enter...");
+			});		
+			});
+</script>
+<script type='text/javascript' src='wp-content/themes/baltazar-lite/js/jquery.bxslider.js@ver=1' id='jquery-bxslider-js'></script>
+<script type='text/javascript' src='wp-content/themes/baltazar-lite/js/infinity.js@ver=1' id='infinity-js'></script>
+<script type='text/javascript' src='https://s7.addthis.com/js/300/addthis_widget.js?ver=1' id='baltazar_addthis-js'></script>
+<script type='text/javascript' src='https://use.fontawesome.com/30ede005b9.js?ver=5.5.1' id='ot-font-awesome-js'></script>
+<link rel="https://api.w.org/" href="wp-json/index.html" /><link rel="alternate" type="application/json" href="wp-json/wp/v2/posts/259" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.5.1" />
+<link rel='shortlink' href='index.html@p=259.html' />
+<link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embed@url=https%253A%252F%252Fluissanchezdev.com%252Fadd-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json%252F" />
+<link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed@url=https%253A%252F%252Fluissanchezdev.com%252Fadd-an-user-interface-to-your-streamlabs-chatbot-script-using-ui_config-json%252F&amp;format=xml" />
+<style type='text/css'>img#wpstats{display:none}</style><style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="wp-content/uploads/2020/09/favicon.png" sizes="32x32" />
+<link rel="icon" href="wp-content/uploads/2020/09/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="wp-content/uploads/2020/09/favicon.png" />
+<meta name="msapplication-TileImage" content="https://luissanchezdev.com/wp-content/uploads/2020/09/favicon.png" />
+<style type="text/css" id="wp-custom-css">
+			#logo {
+	margin-bottom: 0 !important;
+	margin-top: 20px !important;
+}
+#logo img {
+	height: 15vh;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+div.mainwrap {
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+}
+div.content.singledefult  {
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+}
+div.main {
+	margin-top 0 !important;
+}
+p {
+	font-size: 20px !important;
+}
+div.topBlog {
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+h2.title, h1.title {
+	text-align: left !important;
+}
+div.post-meta {
+	padding: 0 !important;
+	text-align: left !important;
+	margin: 0 !important;
+}
+div.entry p{
+	text-align: justify !important;
+}
+.bottomBlog {
+	display: hidden !important;
+	height: 0px !important;
+	
+}
+h2, h3, h4, h5, h6 {
+	margin-top: 20px;
+}
+div.posttext pre {
+	margin: 0 5% 100px 5% !important;
+	border: 3px solid #6A6A6A;
+	border-radius: 3px;
+	padding: 3px 10px 5px 10px;
+}
+code {
+	font-size: 20px;
+}
+
+div.posttext p {
+	max-width: 100% !important;
+	word-wrap: break-word;
+	overflow: visible !important;
+}
+div.posttext img {
+	width: auto !important;
+	max-height: 80vh !important;
+}
+
+div.content.singlepage {
+	width: 100vw !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.filename {
+	font-family: Consolas;
+	text-align: centre;
+	width: 100%;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+@media screen and (min-width:0px) and (max-width:1220px){
+  div.blogpost {
+  	word-wrap: break-word !important;
+  	width: 80vw !important;
+  }
+	
+	div.posttext pre {
+	  margin: 0 !important;
+  }
+}
+
+
+div.blogpost div.posttext img {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}		</style>
+</head>
+
+<body data-rsssl=1 class="post-template-default single single-post postid-259 single-format-standard" id="particles-js">
+
+
+<div class="pagenav fixedmenu">
+<div class="holder-fixedmenu">
+<div class="logo-fixedmenu">
+<a href="index.html"><img src="wp-content/uploads/2020/09/small-site-header.png" data-rjs="3" alt="Luis Sanchez | Blog - A blog to share knowledge"></a>
+</div>
+<div class="menu-fixedmenu home">
+</div>
+</div>
+</div>
+<header>
+
+
+<div id="headerwrap">
+
+<div id="header">
+<div class="header-image">
+
+
+<div class="respMenu noscroll">
+<div class="resp_menu_button"><i class="fa fa-list-ul fa-2x"></i></div>
+<div class="menu-main-menu-container"><div class="event-type-selector-dropdown"><a class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home" href="index.html">Home</a><br>
+<a class="menu-item menu-item-type-post_type menu-item-object-page" href="index.html@p=105.html">About</a><br>
+<a class="menu-item menu-item-type-post_type menu-item-object-page" href="index.html@p=107.html">Services</a><br>
+<a class="menu-item menu-item-type-post_type menu-item-object-page" href="index.html@p=46.html">Contact</a><br>
+<a class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy" href="index.html@p=3.html">Privacy Policy</a><br>
+</div></div>
+</div>
+
+<div class="logo-inner">
+<div id="logo" class="">
+<a href="index.html"><img src="wp-content/uploads/2020/09/small-site-header.png" alt="Luis Sanchez | Blog - A blog to share knowledge" /></a>
+</div>
+</div>
+</div>
+
+<div class="pagenav ">
+<div class="pmc-main-menu">
+<ul id="menu-main-menu-container" class="menu"><li id="menu-item-9270-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a href="index.html">Home</a></li>
+<li id="menu-item-6927-110" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="index.html@p=105.html">About</a></li>
+<li id="menu-item-7651-111" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="index.html@p=107.html">Services</a></li>
+<li id="menu-item-9565-50" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="index.html@p=46.html">Contact</a></li>
+<li id="menu-item-7008-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy"><a href="index.html@p=3.html">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+
+<div class="mainwrap single-default ">
+
+<div class="main clearfix">
+<div class="content singledefult">
+<div class="postcontent singledefult" id="post-" class="post-259 post type-post status-publish format-standard hentry category-slcb tag-scripts tag-tutorial tag-user-interface">
+<div class="blogpost">
+<div class="posttext">
+<div class="blogsingleimage">
+</div>
+<div class="topBlog">
+<div class="blog-category"><em><a href="category/slcb/index.html" rel="category tag">Streamlabs Chatbot</a></em> </div>
+<h1 class="title"> Add an user interface to your Streamlabs Chatbot script using UI_Config.json</h1>
+<div class="post-meta">
+<a class="post-meta-time" href="2020/10/08/index.html">October 8, 2020</a>
+<a class="post-meta-author" href="index.html">by Luis Sanchez</a>
+<a href="index.html@p=259.html#comments">No Comments</a>
+</div>
+</div>
+ <div class="sentry">
+<div><p>Make your scripts look professional and easy to use with an user interface capable of customizing your script to meet your users requirements.</p>
+<p>All the streamers who have used scripts before always check the configuration interface just after installing a script, so it makes sense to make your script as customizable as possible. Commands, cooldowns, messages, live only and script specific customizations!</p>
+<p>In this post I will show you how to add an user interface to your script. The script we will create will be a dice roll script where the sides of the diCe can be customizable along the command, live only and output message.</p>
+<h2>Download</h2>
+<p>You can download the script to follow along from <a href="https://dev.azure.com/luissanchezdev-blog/1140a576-94b1-44e5-ad98-a023edf1b7a4/_apis/git/repositories/07ce3f5f-75e9-457e-a653-f72a9351c670/items?path=%2FDiceRoller&amp;versionDescriptor%5BversionOptions%5D=0&amp;versionDescriptor%5BversionType%5D=0&amp;versionDescriptor%5Bversion%5D=master&amp;resolveLfs=true&amp;%24format=zip&amp;api-version=5.0&amp;download=true">here (direct download)</a> or <a href="http://gestyy.com/ee9Nrc">here (support the blog)</a>.</p>
+<h2>Prerequisites</h2>
+<p>If you don&#8217;t know how to make a Streamlabs Chatbot script make sure to check out <a href="index.html@p=240.html">how to create your first Streamlabs Chatbot script</a>.</p>
+<p>You also need to understand JSON (JavaScript Object Notation) to edit the user interface file, you can learn about JSON at these W3Schools&#8217; pages: <a href="https://www.w3schools.com/js/js_json_intro.asp">JSON &#8211; Introduction</a> and <a href="https://www.w3schools.com/js/js_json_syntax.asp">JSON Syntax</a>.</p>
+<p>Related to JSON, the JSON file will be converted to a Python Dictionary, you can <a href="https://docs.python.org/2/tutorial/datastructures.html#tut-dictionaries">learn more about python dictionaries here</a>.</p>
+<h2>Adding an user interface to your script</h2>
+<h3>1. Folder and files</h3>
+<p>We will create the next folder structure for our dice rolling script. The name will be <code>Dice Roll</code>.</p>
+<pre><code>%APPDATA%\Streamlabs\Streamlabs Chatbot\Services\Scripts\
+└── DiceRoll\
+    ├── DiceRoll_StreamlabsSystem.py
+    ├── UI_Config.json
+    └── README.txt</code></pre>
+<h3>2. Initialize the script</h3>
+<p>Before we start editing our user interface we need to make our script appear in the scripts list, so we initialize it with the required variables and functions:</p>
+<p class="filename">DiceRoll_StreamlabsSystem.py</p>
+<pre><code class="language-python">ScriptName = &quot;Dice Roll&quot;
+Description = &quot;Adds a command to roll a customizable die&quot;
+Creator = &quot;LuisSanchezDev&quot;
+Version = &quot;1.0.0&quot;
+Website = &quot;https://luissanchezdev.com/&quot;
+
+def Init():
+  pass
+
+def Execute(data):
+  pass
+
+def Tick():
+  pass</code></pre>
+<p>Save the file, reload the scripts and make sure it shows up in the scripts list. There is no need to enable it yet.</p>
+<h3>3. Add controls to the user interface</h3>
+<p>Before editing the UI_Config.json file to add our controls, we need to define what controls we need and what information they hold, for example:</p>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Type</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Live only</strong></td>
+<td>checkbox</td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Roll command</strong></td>
+<td>text</td>
+<td>!roll</td>
+</tr>
+<tr>
+<td><strong>Number of dice faces</strong></td>
+<td>numberbox</td>
+<td>6</td>
+</tr>
+<tr>
+<td><strong>Roll message</strong></td>
+<td>text</td>
+<td>$user throws a $sides-sided dice: $value</td>
+</tr>
+</tbody>
+</table>
+<p>The words starting with a dollar sign (<code>$</code>) are placeholders where we will put our own data.</p>
+<p>Now that we know what information we need to customize the script we will edit the <code>UI_Config.json</code> file. Since it is a json file we enclose everything in curly brackets <code>{}</code>.</p>
+<p>The first thing we need to specify is the filename where all the customized information will be stored.</p>
+<p class="filename">UI_Config.json</p>
+<pre><code class="language-json">{
+  &quot;output_file&quot;: &quot;config.json&quot;,
+}</code></pre>
+<p>Next step is to specify all the controls we want. Each control is a json object with key-value pairs specific to each control type. The most common keys are:</p>
+<table>
+<thead>
+<tr>
+<th>Key name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>&quot;type&quot;</strong></td>
+<td>Specify the control type like checkbox, numberbox, textbox, etc.</td>
+</tr>
+<tr>
+<td><strong>&quot;label&quot;</strong></td>
+<td>The name shown next to the control input.</td>
+</tr>
+<tr>
+<td><strong>&quot;value&quot;</strong></td>
+<td>Control default value, this value is shown the first time the user opens the configuration interface.</td>
+</tr>
+<tr>
+<td><em>&quot;tooltip&quot;</em></td>
+<td>Text shown when leaving the mouse over the control, useful for extra description.</td>
+</tr>
+<tr>
+<td><strong>&quot;group&quot;</strong></td>
+<td>Specify the control group to keep your configuration interface clean and tidy.</td>
+</tr>
+</tbody>
+</table>
+<p>The entire controls list can be found in the <a href="https://github.com/AnkhHeart/Streamlabs-Chatbot-Python-Boilerplate/wiki/Creating-UI-Config-File#example-file">Streamlabs Chatbot wiki</a>. In this case we are only using a checkbox, 2 textboxes and a numberbox which only need the keys specified before.</p>
+<p class="filename">UI_Config.json</p>
+<pre><code class="language-json">{
+  &quot;output_file&quot;: &quot;config.json&quot;,
+  &quot;live_only&quot;: {
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;label&quot;: &quot;Live only&quot;,
+    &quot;value&quot;: false,
+    &quot;tooltip&quot;: &quot;Check this option to limit the ussage of this command to only live mode&quot;,
+    &quot;group&quot;: &quot;General&quot;
+  },
+  &quot;command&quot;: {
+    &quot;type&quot;: &quot;textbox&quot;,
+    &quot;label&quot;: &quot;Roll command&quot;,
+    &quot;value&quot;: &quot;!roll&quot;,
+    &quot;tooltip&quot;: &quot;Command to roll a dice&quot;,
+    &quot;group&quot;: &quot;General&quot;
+  },
+  &quot;faces&quot;: {
+    &quot;type&quot;: &quot;numberbox&quot;,
+    &quot;label&quot;: &quot;Number of dice faces&quot;,
+    &quot;value&quot;: 6,
+    &quot;tooltip&quot;: &quot;Specify the amount of faces for the dice&quot;,
+    &quot;group&quot;: &quot;General&quot;
+  },
+  &quot;message&quot;: {
+    &quot;type&quot;: &quot;textbox&quot;,
+    &quot;label&quot;: &quot;Roll message&quot;,
+    &quot;value&quot;: &quot;$user throws a $sides-sided dice: $value&quot;,
+    &quot;tooltip&quot;: &quot;Shown when an user uses the command&quot;,
+    &quot;group&quot;: &quot;General&quot;
+  },
+}</code></pre>
+<p>Save the file and go to the scripts list, click on the <code>Dice Roll</code> script name and you can now see your user interface.</p>
+<p><img src="img/posts/streamlabs-chatbot/add-ui-to-script/script-user-interface.png" alt="script user interface" /></p>
+<p>Now with the user interface ready lets go and edit the script!</p>
+<h3>4. Reading the configuration file</h3>
+<p>When the user clicks on the <code>SAVE SETTINGS</code> button, Streamlabs Chatbot will create a file with the same name as the <code>&quot;output_file&quot;</code> value in the <code>UI_Config.json</code> file. If the user hasn&#8217;t clicked the button, this file will not exist so we will set a default configuration.</p>
+<h4>Importing required modules</h4>
+<p>Streamlabs Chatbot saves the json configuration file with <code>UTF8 BOM</code> encoding and since the Python version that is loaded is 2.7.13 we need to use the <code>codecs</code> module to open it. Also the starting path is where the <code>Streamlabs Chatbot.exe</code> is, so we need the <code>os</code> module to work with paths.</p>
+<p>Add the following code to the beginning of your script file.</p>
+<p class="filename">DiceRoll_StreamlabsSystem.py</p>
+<pre><code class="language-python">import os
+import json
+import codecs
+
+ScriptName = &quot;Dice Roll&quot;
+[...]</code></pre>
+<h4>Global variables</h4>
+<p>Now we need some global variables to save important stuff such as the script directory path and the loaded settings so we can use them anywhere on the script.</p>
+<p>You can see that I also added the path to the config file to my global variables, it makes it easier to read the code when loading the configuration.</p>
+<p class="filename">DiceRoll_StreamlabsSystem.py</p>
+<pre><code class="language-python">[...]
+Website = &quot;https://luissanchezdev.com/&quot;
+
+# Global variables
+global PATH, CONFIG_FILE, SETTINGS
+PATH = os.path.dirname(os.path.realpath(__file__))
+CONFIG_FILE = os.path.join(PATH, &quot;config.json&quot;)
+SETTINGS = {}
+
+def Init():
+[...]</code></pre>
+<h4>Loading the configuration</h4>
+<p>We will load the configuration in the <code>Init</code> function to have everything ready before the script starts, since the config file is saved with the <code>UTF8 BOM</code> encoding we will use <code>codecs.open</code> since you can&#8217;t specify a encoding in the default <code>open</code> function.</p>
+<p>If we get an error while trying to open the config file that means there is no config file, so we can enclose the file opening code in a try/except block to load a default configuration.</p>
+<p class="filename">DiceRoll_StreamlabsSystem.py</p>
+<pre><code class="language-python">[...]
+
+def Init():
+  global PATH, CONFIG_FILE, SETTINGS
+  try:
+    # Open config file with UTF8 BOM encoding
+    with codecs.open(CONFIG_FILE, encoding=&quot;utf-8-sig&quot;, mode=&#039;r&#039;) as file:
+      SETTINGS = json.load(file, encoding=&quot;utf-8-sig&quot;)
+  except:
+    # Error loading the file, set default configuration
+    SETTINGS = {
+      &quot;live_only&quot;: False,
+      &quot;command&quot;: &quot;!roll&quot;,
+      &quot;faces&quot;: 6,
+      &quot;message&quot;: &quot;$user throws a $sides-sided dice: $value&quot;
+    }
+
+    # Prevent dice faces being less than 2
+    if SETTINGS[&quot;faces&quot;] &lt; 2:
+      SETTINGS[&quot;faces&quot;] = 2
+
+[...]</code></pre>
+<p>As you can see, we used the same keys as the <code>UI_Config.json</code> file, loading the configuration file gives you the same dictionary with the user settings.</p>
+<p>After loading the configuration you should take the opportunity to clean the input data, in this case we just make sure the number of faces is no less than 2 so when the user rolls the dice they get one of two numbers at least.</p>
+<p>Now the <code>SETTINGS</code> object has all the configuration, we can now use it wherever we want, like for example in the <code>Execute</code> function.</p>
+<h3>5. Creating the command</h3>
+<p>With all the configuration handy we now write our command, as always only allow chat messages, then check if the streamer is live and if the command should work as per the script configuration.</p>
+<p>I like to put all the conditions that should prevent further execution at the beginning of the code block.</p>
+<p>To check if the streamer is live we use the <code>IsLive</code> function from the <code>Parent</code> object.</p>
+<p class="filename">DiceRoll_StreamlabsSystem.py</p>
+<pre><code class="language-python">[...]
+
+def Execute(data):
+  global SETTINGS
+  if not data.IsChatMessage():
+    return
+
+  if SETTINGS[&quot;live_only&quot;]:
+    if not Parent.IsLive():
+      return
+[...]</code></pre>
+<p>Is time to check if the command the user sent is the command we want to react to,but wait! Last time we hardcoded the command in the script, now we must take the value from the loaded configuration.</p>
+<p>The command is now saved in our <code>SETTINGS</code> variable, we can access it using the <code>&quot;command&quot;</code> key as follows:</p>
+<p class="filename">DiceRoll_StreamlabsSystem.py</p>
+<pre><code class="language-python">[...]
+
+def Execute(data):
+  global SETTINGS
+  if not data.IsChatMessage():
+    return
+
+  if SETTINGS[&quot;live_only&quot;]:
+    if not Parent.IsLive():
+      return
+
+  command = data.GetParam(0)
+  if command == SETTINGS[&quot;command&quot;]:
+    # The command was used
+[...]</code></pre>
+<p>Now that we are filtering only the command we want is time to code the command logic.</p>
+<p>We will use the function <code>GetRandom</code> from the <code>Parent</code> object to throw the dice and get a random number. You can see all the <code>Parent</code> functions at the <a href="https://github.com/AnkhHeart/Streamlabs-Chatbot-Python-Boilerplate/wiki/Parent">Parent object wiki</a>.</p>
+<p><strong>NOTE:</strong> The <code>GetRandom</code> function takes two arguments, the minimum and the maximum value. The maximum value is never reached so make sure to add +1 to the max value you want to get randomly.</p>
+<p class="filename">DiceRoll_StreamlabsSystem.py</p>
+<pre><code class="language-python">[...]
+
+  command = data.GetParam(0)
+  if command == SETTINGS[&quot;command&quot;]:
+    # The command was used
+    dice_value = Parent.GetRandom(1, SETTINGS[&quot;faces&quot;] + 1)
+[...]</code></pre>
+<p>With the random dice value ready we just have to prepare our output message and send it. Remember we need to replace these words in the output message:</p>
+<p><code>$user throws a $sides-sided dice: $value</code></p>
+<ul>
+<li><strong>$user</strong>: Replace with the username stored in <code>data.UserName</code>.</li>
+<li><strong>$sides</strong>: Dice number of faces, this is in the <code>SETTINGS[&quot;faces&quot;]</code> configuration.</li>
+<li><strong>$value</strong>: The dice value, we just got it in <code>dice_value</code>.</li>
+</ul>
+<p>Every string has a <code>replace</code> function we can use tu replace words in them, also don&#8217;t forget to convert the numbers to strings:</p>
+<p class="filename">DiceRoll_StreamlabsSystem.py</p>
+<pre><code class="language-python">[...]
+
+  command = data.GetParam(0)
+  if command == SETTINGS[&quot;command&quot;]:
+    # The command was used
+    dice_value = Parent.GetRandom(1, SETTINGS[&quot;faces&quot;] + 1)
+
+    output_msg = SETTINGS[&quot;message&quot;].replace(&quot;$user&quot;, data.UserName)
+    output_msg = output_msg.replace(&quot;$sides&quot;, str(SETTINGS[&quot;faces&quot;]))
+    output_msg = output_msg.replace(&quot;$value&quot;, str(dice_value))
+    Parent.SendStreamMessage(output_msg)
+
+[...]</code></pre>
+<p>If you try your script right now it will work but when the user saves a new configuration they will need to reload all the scripts. To tackle this, Streamlabs Chatbot has an optional function you can use called <code>ReloadSettings</code>, this function gets called when the user saves new settings.</p>
+<p>This is why you should initialize everything in the <code>Init</code> function, you just have to call it inside the <code>ReloadSettings</code> function to avoid reloading all scripts:</p>
+<p class="filename">DiceRoll_StreamlabsSystem.py</p>
+<pre><code class="language-python">[...]
+
+def Tick():
+  pass
+
+def ReloadSettings(jsonData):
+  Init()</code></pre>
+<p>Save, reload the scripts, enable <code>Dice Roll</code> and test the <code>!roll</code> command!</p>
+<p><img src="img/posts/streamlabs-chatbot/add-ui-to-script/script-test-1.png" alt="chat picture with script test" /></p>
+<p>Now change the configuration and try again! I&#8217;m using the <code>!throw</code> command with a <code>20</code> sided dice and the <code>$user summons a D$sides dice and rolls $value$</code> message.</p>
+<p><img src="img/posts/streamlabs-chatbot/add-ui-to-script/script-test-2.png" alt="custom configuration chat picture with script test" /></p>
+<h3>6. Add a README button</h3>
+<p>Your script is working! But what if you have a more complex script? Or you want to leave your contact information so that people can give you suggestions or report issues? You need a README.</p>
+<p>First edit your README with all the info you want to give the user:</p>
+<p class="filename">README.txt</p>
+<pre><code class="language-txt">Dice Roll made by Luis Sanchez
+  Found any bugs or want to give a suggestion?
+    * Email: <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="5a3723743f373b33361a3f373b333674393537">[email&#160;protected]</a>
+    * Discord: myname#0123
+    * Phone: 555-0123
+
+Description
+This script allows you and your viewers to roll a dice with customizable settings!
+
+Features
+* Anyone can roll a dice!
+* 6 sided dice? 20 sides? 100? Set your own dice sides!
+* Customizable message</code></pre>
+<p>Now add a button as the first control in your <code>UI_Config.json</code>, this button will show our <code>README.txt</code>.</p>
+<p class="filename">UI_Config.json</p>
+<pre><code class="language-json">{
+    &quot;output_file&quot;: &quot;config.json&quot;,
+    &quot;readme&quot;: {
+        &quot;type&quot;: &quot;button&quot;,
+        &quot;label&quot;: &quot;Open README&quot;,
+        &quot;tooltip&quot;: &quot;Click here to open the README for features list, usage and contact information&quot;,
+        &quot;function&quot;: &quot;open_readme&quot;,
+        &quot;wsevent&quot;: &quot;&quot;,
+        &quot;group&quot;: &quot;General&quot;
+    },
+    &quot;live_only&quot;: {
+[...]</code></pre>
+<p>The <code>function</code> value in the button control is the name of the function you want this button to run.</p>
+<p>Let&#8217;s add an <code>open_readme</code> function to our script!</p>
+<p class="filename">DiceRoll_StreamlabsSystem.py</p>
+<pre><code class="language-python">[...]
+
+def ReloadSettings(jsonData):
+  Init()
+
+def open_readme():
+  global PATH
+  readme_path = os.path.join(PATH, &quot;README.txt&quot;)
+  os.startfile(readme_path)</code></pre>
+<p>As you can see, we use <code>os.startfile</code> to open the <code>README.txt</code> file. If you have your script on Github you can replace the file path with an url and it will open it.</p>
+<p>To test the button you have to follow these steps:</p>
+<ol>
+<li>Save all files</li>
+<li>Reload the scripts</li>
+<li>Click on the <code>Dice Roll</code> script to show the user interface</li>
+<li>Click the <code>OPEN README</code> button</li>
+</ol>
+<p>You have to do it this way because everytime you click on the script name, the user interface gets reloaded. Also the script that is currently running doesn&#8217;t have the function defined so it will just throw an error. But even if you have the function defined and the user interface open and reload the scripts the button will stop working because it was linked to the function from the previously loaded script!</p>
+<h3>Extra. Common error</h3>
+<p>When using dictionaries there is an error with a non-descriptive error message, I modified a line so you can take a look at it: </p>
+<p><img src="img/posts/streamlabs-chatbot/add-ui-to-script/error-message.png" alt="non descriptive error message" /></p>
+<p><em>Cool story bro! What is the problem?</em> Well&#8230; the problem is that you tried to access a key in the dictionary that doesn&#8217;t exists!</p>
+<p>This is how the line #50 looks, you can see that we tried to access the <code>messsage</code> key instead of the <code>message</code> key!</p>
+<p class="filename">DiceRoll_StreamlabsSystem.py</p>
+<pre><code class="language-python">    output_msg = SETTINGS[&quot;messsage&quot;].replace(&quot;$user&quot;, data.UserName)</code></pre>
+<p>So when you see an error message like this one, make sure you are using the correct key.</p>
+<h2>Conclusion</h2>
+<p>It wasn&#8217;t that difficult right? Create your UI_Config.json file, paste the controls you want and read the values from the script! With this information now your scripts will look professional and will be easy to use.</p>
+<p>If you start creating a lot of sscripts I recommend to fill the settings first inside the script and when you finish the script, create your UI_Config.json file. Remember to make your script super easy to use and always add a README button for instructions on how to use your script. </p>
+</div>
+<div class="post-page-links"></div>
+<div class="singleBorder"></div>
+</div>
+</div>
+<div class="tags"><a href="tag/scripts/index.html" rel="tag">scripts</a> <a href="tag/tutorial/index.html" rel="tag">tutorial</a> <a href="tag/user-interface/index.html" rel="tag">user interface</a></div>
+<div class="blog-info">
+<div class="blog_social"> <div class="addthis_toolbox"><div class="baltazar-share">Share: </div><div class="custom_images"><a class="addthis_button_facebook" addthis:title="Add an user interface to your Streamlabs Chatbot script using UI_Config.json"><i class="fa fa-facebook"></i></a><a class="addthis_button_twitter" addthis:title="Add an user interface to your Streamlabs Chatbot script using UI_Config.json"><i class="fa fa-twitter"></i></a><a class="addthis_button_stumbleupon" addthis:title="Add an user interface to your Streamlabs Chatbot script using UI_Config.json"><i class="fa fa-stumbleupon"></i></a></div></div></div>
+</div>
+<div class="author-info-wrap">
+<div class="blogAuthor">
+<a href="author/luis-sanchez/index.html"><img alt='' src='https://secure.gravatar.com/avatar/1a3d42b86011bca75639fbf178e411d8?s=100&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/1a3d42b86011bca75639fbf178e411d8?s=200&#038;d=mm&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' loading='lazy' /></a>
+</div>
+<div class="authorBlogName">
+Written by Luis Sanchez
+</div>
+<div class="bibliographical-info">I'm a software developer focused on tasks automation and backend development.
+I am based in Tamaulipas, Mexico. I have been working as a freelance developer since 2018 doing web scraping and scripting.</div>
+</div>
+
+</div>
+</div>
+<div class="relatedPosts baltazar_fullwidth">
+<div class="relatedtitle">
+<h4>Related Posts</h4>
+</div>
+<div class="related">
+<div class="one_third">
+<h4><a href="index.html@p=188.html" rel="bookmark" title=Permanent Link to How to use scripts in Streamlabs Chatbot">How to use scripts in Streamlabs Chatbot</a></h4>
+<a class="post-meta-time" href="2020/09/25/index.html">September 25, 2020</a>
+</div>
+<div class="one_third">
+<h4><a href="index.html@p=240.html" rel="bookmark" title=Permanent Link to Create your first Streamlabs Chatbot script">Create your first Streamlabs Chatbot script</a></h4>
+<a class="post-meta-time" href="2020/09/30/index.html">September 30, 2020</a>
+</div>
+</div>
+</div>
+
+
+
+<div id="commentform">
+<div class="titleborderOut">
+<div class="titleborder"></div>
+</div>
+<div class="post-comments-title">
+<h4 class="post-comments">Leave a Comment</h4>
+</div>
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html@p=259.html#respond" style="display:none;">Cancel Reply</a></small></h3><form action="https://luissanchezdev.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><div><textarea id="comment" name="comment" cols="45" rows="8" tabindex="4" aria-required="true"></textarea></div><div class="commentfield"><label for="author">Name <small>(required)</small></label><br><input id="author" name="author" type="text" value="" tabindex="1" /></div>
+<div class="commentfield"><label for="email">Mail <small>(required)</small></label> <br><input id="email" name="email" type="text" value="" tabindex="2" /></div>
+<div class="commentfield"><label for="url">Website</label><br><input id="url" name="url" type="text" value="" tabindex="3" /></div>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Leave a Comment" /> <input type='hidden' name='comment_post_ID' value='259' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p></form> </div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="totop"><div class="gototop"><div class="arrowgototop"></div></div></div>
+
+<footer>
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+	let links = document.getElementsByTagName("a");
+	for (let i = 0; i <= links.length; i++) {
+		let link = links[i].getAttribute("href");
+		if (!(link.includes(window.location.origin) || link[0] == "/")) {
+			links[i].setAttribute("target", "_blank");
+		}
+	}
+</script>
+<div id="footer">
+
+<div id="footerinside">
+
+<div class="block_footer_text">
+<p></p>
+</div>
+<div class="footer_widget">
+<div class="footer_widget1">
+</div>
+<div class="footer_widget2">
+</div>
+<div class="footer_widget3">
+</div>
+</div>
+</div>
+</div>
+
+<div id="footerbwrap">
+<div id="footerb">
+<div class="lowerfooter">
+<div class="copyright">
+<div class="left-footer-content">© 2019 copyright PREMIUMCODING // All rights reserved</div>
+<div class="right-footer-content">Modified </div> </div>
+</div>
+</div>
+</div>
+</footer>
+<script type='text/javascript' async="async" src='wp-content/plugins/koko-analytics/assets/dist/js/script.js@ver=1.0.19' id='koko-analytics-js'></script>
+<script type='text/javascript' src='wp-content/themes/baltazar-lite/js/retina.min.js@ver=1' id='retinaimages-js'></script>
+<script type='text/javascript' src='wp-content/themes/baltazar-lite/js/jquery.easing.1.3.js@ver=1' id='jquery-easing-js'></script>
+<script type='text/javascript' src='wp-content/themes/baltazar-lite/js/jquery.cycle.all.min.js@ver=1' id='jquery-cycle-all-js'></script>
+<script type='text/javascript' src='wp-content/themes/baltazar-lite/js/gistfile.js@ver=1' id='gistfile-js'></script>
+<script type='text/javascript' src='wp-content/themes/baltazar-lite/js/jquery.isotope.min.js@ver=1' id='jquery-isotope-js'></script>
+<script type='text/javascript' src='wp-includes/js/comment-reply.min.js@ver=5.5.1' id='comment-reply-js'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/ui/core.min.js@ver=1.11.4' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/ui/widget.min.js@ver=1.11.4' id='jquery-ui-widget-js'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/ui/tabs.min.js@ver=1.11.4' id='jquery-ui-tabs-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-core.min.js?ver=1.15.0' id='prism-js-0-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js?ver=1.15.0' id='prism-js-1-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.js?ver=1.15.0' id='prism-js-2-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/autoloader/prism-autoloader.min.js?ver=1.15.0' id='prism-js-3-js'></script>
+<script type='text/javascript' src='wp-includes/js/clipboard.min.js@ver=5.5.1' id='clipboard-js'></script>
+<script type='text/javascript' src='wp-content/plugins/mystickysidebar/js/detectmobilebrowser.js@ver=1.2.3' id='detectmobilebrowser-js'></script>
+<script type='text/javascript' id='mystickysidebar-js-extra'>
+/* <![CDATA[ */
+var mystickyside_name = {"mystickyside_string":"#sidebar","mystickyside_content_string":"","mystickyside_margin_top_string":"90","mystickyside_margin_bot_string":"0","mystickyside_update_sidebar_height_string":"","mystickyside_min_width_string":"0","device_desktop":"1","device_mobile":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/mystickysidebar/js/theia-sticky-sidebar.js@ver=1.2.3' id='mystickysidebar-js'></script>
+<script type='text/javascript' src='wp-includes/js/wp-embed.min.js@ver=5.5.1' id='wp-embed-js'></script>
+<script id="preference-link-target"> (function($) { $(function() { $(".post").find("a").each(function() { var link_href = $(this).attr("href"); if (link_href.indexOf("#") == -1) { $(this).attr("target", "_blank"); } }); }); })(jQuery); </script> <script id="auto_loader_config_scripts"> Prism.plugins.autoloader.languages_path = "https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/"; </script> <script id="module-prism-line-number"> (function($) { $(function() { $("code").each(function() { var parent_div = $(this).parent("pre"); var pre_css = $(this).attr("class"); if (typeof pre_css !== "undefined" && -1 !== pre_css.indexOf("language-")) { parent_div.addClass("line-numbers"); } }); }); })(jQuery); </script> <script id="module-clipboard"> (function($) { $(function() { var pre = document.getElementsByTagName("pre"); var pasteContent = document.getElementById("paste-content"); var hasLanguage = false; for (var i = 0; i < pre.length; i++) { var codeClass = pre[i].children[0].className; var isLanguage = codeClass.indexOf("language-"); var excludedCodeClassNames = [ "language-katex", "language-seq", "language-sequence", "language-flow", "language-flowchart", "language-mermaid", ]; var isExcluded = excludedCodeClassNames.indexOf(codeClass); if (isExcluded !== -1) { isLanguage = -1; } if (isLanguage !== -1) { var button = document.createElement("button"); button.className = "copy-button"; button.textContent = "Copy"; pre[i].appendChild(button); hasLanguage = true; } }; if (hasLanguage) { var copyCode = new ClipboardJS(".copy-button", { target: function(trigger) { return trigger.previousElementSibling; } }); copyCode.on("success", function(event) { event.clearSelection(); event.trigger.textContent = "Copied"; window.setTimeout(function() { event.trigger.textContent = "Copy"; }, 2000); }); } }); })(jQuery); </script> <script type='text/javascript' src='https://stats.wp.com/e-202105.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.9.1',blog:'183565176',post:'259',tz:'0',srv:'luissanchezdev.com'} ]);
+	_stq.push([ 'clickTrackerInit', '183565176', '259' ]);
+</script>
+</body>
+</html>
